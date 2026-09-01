@@ -4,6 +4,11 @@ version = "0.1.0"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
+description = "Board support package for the Seeed Studio XIAO ESP32-C6: pin mapping and fixed-function I/O (LED, RF/antenna switches, boot button)"
+repository = "https://github.com/jfernand/esp-xy"
+readme = "README.md"
+keywords = ["esp32c6", "xiao", "bsp", "embedded", "esp-hal"]
+categories = ["embedded", "hardware-support", "no-std"]
 
 [dependencies]
 esp-hal = { version = "1.1.0", features = ["defmt", "esp32c6", "unstable"] }
