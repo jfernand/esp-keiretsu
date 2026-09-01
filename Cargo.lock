@@ -1311,6 +1311,7 @@ dependencies = [
  "esp-rtos",
  "resp",
  "smoltcp",
+ "xiao-esp32c6-bsp",
 ]
 
 [[package]]

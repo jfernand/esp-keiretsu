@@ -15,8 +15,8 @@ use esp_hal::time::{Duration, Instant};
 use esp_hal::timer::timg::TimerGroup;
 use esp_println as _;
 use esp_radio::ble::controller::BleConnector;
-use firmware::Board;
 use firmware::quadrature::QuadratureDecoder;
+use xiao_esp32c6_bsp::Board;
 
 #[panic_handler]
 fn panic(panic_info: &core::panic::PanicInfo) -> ! {

@@ -11,6 +11,7 @@ path = "./src/bin/main.rs"
 
 [dependencies]
 resp = { path = "../resp" }
+xiao-esp32c6-bsp = { path = "../bsp" }
 
 esp-hal = { version = "~1.1.0", features = ["defmt", "esp32c6", "unstable"] }
 
