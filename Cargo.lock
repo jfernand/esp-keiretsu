@@ -1199,7 +1199,7 @@ dependencies = [
  "btleplug",
  "clap",
  "futures",
- "resp",
+ "resp-over-x",
  "thiserror 2.0.20",
  "tokio",
  "uuid",
@@ -1309,7 +1309,7 @@ dependencies = [
  "esp-println",
  "esp-radio",
  "esp-rtos",
- "resp",
+ "resp-over-x",
  "smoltcp",
  "xiao-esp32c6-bsp",
 ]
@@ -2012,7 +2012,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "resp"
+name = "resp-over-x"
 version = "0.1.0"
 
 [[package]]
