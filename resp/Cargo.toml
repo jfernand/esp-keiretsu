@@ -4,6 +4,11 @@ version = "0.1.0"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
+description = "A tiny RESP-inspired command/reply framing for any byte stream (BLE, UART, TCP, ...) -- no_std, no-alloc by default"
+repository = "https://github.com/jfernand/esp-xy"
+readme = "README.md"
+keywords = ["resp", "no-std", "embedded", "protocol"]
+categories = ["parsing", "encoding", "no-std"]
 
 [dependencies]
 
