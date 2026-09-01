@@ -58,10 +58,10 @@ use esp_hal::time::{Duration, Instant, Rate};
 use esp_hal::timer::timg::TimerGroup;
 use esp_println as _;
 use esp_radio::ble::controller::BleConnector;
-use xiao_esp32c6_bsp::Board;
-use xiao_esp32c6_bsp::quadrature::QuadratureDecoder;
-use xiao_esp32c6_bsp::resp::{self, Command};
-use xiao_esp32c6_bsp::stepper::{Direction, StepGenerator};
+use firmware::Board;
+use firmware::quadrature::QuadratureDecoder;
+use firmware::resp::{self, Command};
+use firmware::stepper::{Direction, StepGenerator};
 
 #[panic_handler]
 fn panic(panic_info: &core::panic::PanicInfo) -> ! {

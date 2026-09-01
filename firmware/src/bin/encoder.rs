@@ -11,8 +11,8 @@ use esp_hal::gpio::{Input, InputConfig, Pull};
 use esp_hal::main;
 use esp_hal::pcnt::Pcnt;
 use esp_println as _;
-use xiao_esp32c6_bsp::Board;
-use xiao_esp32c6_bsp::quadrature::QuadratureDecoder;
+use firmware::Board;
+use firmware::quadrature::QuadratureDecoder;
 
 #[panic_handler]
 fn panic(panic_info: &core::panic::PanicInfo) -> ! {
