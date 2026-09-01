@@ -13,7 +13,7 @@ path = "src/main.rs"
 resp = { package = "resp-over-x", path = "../resp", features = ["decode"] }
 
 btleplug = "0.12"
-tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "io-util"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "io-util", "net"] }
 futures = "0.3"
 thiserror = "2.0"
 uuid = { version = "1", features = ["v4"] }

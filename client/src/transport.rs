@@ -7,8 +7,10 @@ use std::time::Duration;
 
 use resp::RespFrame;
 
+use crate::ble::BleConnection;
 use crate::error::LinkError;
 use crate::protocol;
+use crate::tcp::TcpConnection;
 use crate::types::{Direction, Mode, Status};
 
 /// A connected link to an ESP-XY device, carried over some byte transport.
@@ -95,5 +97,28 @@ pub trait RespLink {
             self.send_command("CLEAR", timeout)
                 .await?,
         )
+    }
+}
+
+/// A connection to an ESP-XY device over whichever backend was actually used to reach it --
+/// lets the CLI pick BLE or TCP at runtime and use the rest of [`RespLink`] unchanged.
+pub enum AnyConnection {
+    Ble(BleConnection),
+    Tcp(TcpConnection),
+}
+
+impl RespLink for AnyConnection {
+    async fn send_raw(&self, data: &[u8]) -> Result<(), LinkError> {
+        match self {
+            Self::Ble(conn) => conn.send_raw(data).await,
+            Self::Tcp(conn) => conn.send_raw(data).await,
+        }
+    }
+
+    async fn next_frame(&self) -> Result<RespFrame, LinkError> {
+        match self {
+            Self::Ble(conn) => conn.next_frame().await,
+            Self::Tcp(conn) => conn.next_frame().await,
+        }
     }
 }
