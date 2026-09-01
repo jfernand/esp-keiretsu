@@ -3,7 +3,7 @@
 use std::time::Duration;
 
 use clap::{Parser, Subcommand};
-use esp_xy_client::{BleClient, Direction, Mode};
+use esp_xy_client::{BleClient, BleConnection, Direction, Mode, RespLink};
 
 #[derive(Parser, Debug)]
 #[command(
@@ -152,7 +152,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 async fn connect_target(
     client: &BleClient,
     target: Option<&str>,
-) -> Result<esp_xy_client::BleConnection, Box<dyn std::error::Error>> {
+) -> Result<BleConnection, Box<dyn std::error::Error>> {
     println!("Scanning for ESP-XY peripheral...");
     let devices = client
         .scan(Duration::from_secs(3))
