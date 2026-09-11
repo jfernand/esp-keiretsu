@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  client:
+    name: client (host)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install libdbus (btleplug/bluez backend)
+        run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config
+      - name: Install pinned toolchain
+        run: rustup show
+      - uses: Swatinem/rust-cache@v2
+      - name: Test resp-over-x (all features)
+        run: cargo test -p resp-over-x --all-features
+      - name: Build client
+        run: cargo build -p esp-xy-client
+      - name: Test client
+        run: cargo test -p esp-xy-client
+      - name: Clippy client
+        run: cargo clippy -p esp-xy-client -- -D warnings
+
+  firmware:
+    name: firmware (riscv32imac)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: firmware
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned toolchain
+        run: rustup show
+      - uses: Swatinem/rust-cache@v2
+      - name: Build all binaries
+        run: cargo build --bin encoder --bin esp-xy --bin leadscrew --bin leadscrew_tcp
+      - name: Clippy all binaries
+        run: cargo clippy --bin encoder --bin esp-xy --bin leadscrew --bin leadscrew_tcp -- -D warnings
+
+  bsp-crates:
+    name: bsp crates (riscv32imac)
+    runs-on: ubuntu-latest
+    # These crates don't have their own .cargo/config.toml, so build from firmware/ to pick up
+    # its target + build-std settings (Cargo discovers .cargo/config.toml from the CWD upward,
+    # not per-workspace-member).
+    defaults:
+      run:
+        working-directory: firmware
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned toolchain
+        run: rustup show
+      - uses: Swatinem/rust-cache@v2
+      - name: Build xiao-esp32c6-bsp
+        run: cargo build -p xiao-esp32c6-bsp
+      - name: Clippy xiao-esp32c6-bsp
+        run: cargo clippy -p xiao-esp32c6-bsp -- -D warnings
+      - name: Build esp32c6-devkitm1-bsp
+        run: cargo build -p esp32c6-devkitm1-bsp
+      - name: Clippy esp32c6-devkitm1-bsp
+        run: cargo clippy -p esp32c6-devkitm1-bsp -- -D warnings
