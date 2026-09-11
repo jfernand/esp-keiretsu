@@ -1,9 +1,10 @@
 [workspace]
 members = [
-    "bsp",
     "client",
+    "devkitm1-bsp",
     "firmware",
     "resp",
+    "xiao-esp32c6-bsp",
 ]
 resolver = "3"
 
