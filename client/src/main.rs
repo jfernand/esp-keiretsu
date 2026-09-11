@@ -1,4 +1,4 @@
-//! Interactive CLI tool for the ESP-XY electronic leadscrew controller, over BLE or TCP.
+//! Interactive CLI tool for the ESP-Keiretsu electronic leadscrew controller, over BLE or TCP.
 
 use std::time::Duration;
 
@@ -9,7 +9,7 @@ use esp_xy_client::{AnyConnection, BleClient, Direction, Mode, RespLink, TcpConn
 #[command(
     name = "esp-xy-client",
     version,
-    about = "Host Client for ESP-XY RISC-V Controller (BLE or TCP)"
+    about = "Host Client for ESP-Keiretsu RISC-V Controller (BLE or TCP)"
 )]
 struct Cli {
     /// Connect over BLE to a device matching this name/address substring, instead of the
@@ -27,7 +27,7 @@ struct Cli {
 
 #[derive(Subcommand, Debug)]
 enum Commands {
-    /// Scan for nearby ESP-XY devices advertising NUS (BLE only)
+    /// Scan for nearby ESP-Keiretsu devices advertising NUS (BLE only)
     Scan {
         #[arg(short, long, default_value = "5")]
         timeout_secs: u64,
@@ -147,7 +147,7 @@ async fn connect_target(
     }
 
     let client = BleClient::new().await?;
-    println!("Scanning for ESP-XY peripheral...");
+    println!("Scanning for ESP-Keiretsu peripheral...");
     let devices = client
         .scan(Duration::from_secs(3))
         .await?;

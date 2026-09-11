@@ -1,4 +1,4 @@
-//! High-level types and command helpers for the ESP-XY leadscrew system.
+//! High-level types and command helpers for the ESP-Keiretsu leadscrew system.
 
 use core::fmt;
 use std::str::FromStr;

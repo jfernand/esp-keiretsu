@@ -13,7 +13,7 @@ use crate::protocol;
 use crate::tcp::TcpConnection;
 use crate::types::{Direction, Mode, Status};
 
-/// A connected link to an ESP-XY device, carried over some byte transport.
+/// A connected link to an ESP-Keiretsu device, carried over some byte transport.
 #[allow(
     async_fn_in_trait,
     reason = "internal, non-dyn trait used only within this binary -- no need for an explicit \
@@ -100,7 +100,7 @@ pub trait RespLink {
     }
 }
 
-/// A connection to an ESP-XY device over whichever backend was actually used to reach it --
+/// A connection to an ESP-Keiretsu device over whichever backend was actually used to reach it --
 /// lets the CLI pick BLE or TCP at runtime and use the rest of [`RespLink`] unchanged.
 pub enum AnyConnection {
     Ble(BleConnection),

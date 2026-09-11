@@ -18,7 +18,7 @@ use crate::transport::RespLink;
 /// Default port for the firmware's RESP-over-x TCP listener (a nod to RESP's usual home).
 pub const DEFAULT_PORT: u16 = 6379;
 
-/// Active connected TCP session with the ESP-XY device.
+/// Active connected TCP session with the ESP-Keiretsu device.
 #[derive(Clone)]
 pub struct TcpConnection {
     write_half: Arc<Mutex<OwnedWriteHalf>>,

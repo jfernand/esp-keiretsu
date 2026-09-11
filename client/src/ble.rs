@@ -165,7 +165,7 @@ impl BleClient {
     }
 }
 
-/// Active connected BLE session with the ESP-XY device.
+/// Active connected BLE session with the ESP-Keiretsu device.
 #[derive(Clone)]
 pub struct BleConnection {
     peripheral: Peripheral,
