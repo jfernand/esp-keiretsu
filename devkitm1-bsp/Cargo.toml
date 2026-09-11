@@ -1,0 +1,14 @@
+[package]
+name = "esp32c6-devkitm1-bsp"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT OR Apache-2.0"
+description = "Board support package for ESP32-C6-WROOM-1 dev boards built on Espressif's ESP32-C6-DevKitM-1 reference design: pin mapping and fixed-function I/O (BOOT button, RGB LED data pin)"
+repository = "https://github.com/jfernand/esp-crates"
+readme = "README.md"
+keywords = ["esp32c6", "devkitm1", "bsp", "embedded", "esp-hal"]
+categories = ["embedded", "hardware-support", "no-std"]
+
+[dependencies]
+esp-hal = { version = "1.1.0", features = ["defmt", "esp32c6", "unstable"] }

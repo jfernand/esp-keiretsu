@@ -1413,6 +1413,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "esp32c6-devkitm1-bsp"
+version = "0.1.0"
+dependencies = [
+ "esp-hal",
+]
+
+[[package]]
 name = "esp32c61"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
