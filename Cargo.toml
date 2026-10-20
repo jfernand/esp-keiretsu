@@ -3,6 +3,7 @@ members = [
     "client",
     "devkit-bsp",
     "firmware",
+    "hub75-driver",
     "resp",
     "xiao-esp32c6-bsp",
 ]

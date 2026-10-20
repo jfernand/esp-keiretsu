@@ -67,3 +67,7 @@ jobs:
         run: cargo build -p esp32c6-devkit-bsp --no-default-features --features devkitm1
       - name: Clippy esp32c6-devkit-bsp (DevKitM-1)
         run: cargo clippy -p esp32c6-devkit-bsp --no-default-features --features devkitm1 -- -D warnings
+      - name: Build esp32c6-hub75-driver
+        run: cargo build -p esp32c6-hub75-driver
+      - name: Clippy esp32c6-hub75-driver
+        run: cargo clippy -p esp32c6-hub75-driver -- -D warnings
