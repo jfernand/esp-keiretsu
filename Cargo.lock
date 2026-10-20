@@ -1413,7 +1413,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "esp32c6-devkitm1-bsp"
+name = "esp32c6-devkit-bsp"
 version = "0.1.0"
 dependencies = [
  "esp-hal",

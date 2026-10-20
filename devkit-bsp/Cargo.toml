@@ -1,0 +1,20 @@
+[package]
+name = "esp32c6-devkit-bsp"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT OR Apache-2.0"
+description = "Board support package for Espressif's ESP32-C6-DevKitC-1 and ESP32-C6-DevKitM-1 reference designs (select one with the `devkitc1`/`devkitm1` feature): pin mapping and fixed-function I/O (BOOT button, RGB LED data pin)"
+repository = "https://github.com/jfernand/esp-crates"
+readme = "README.md"
+keywords = ["esp32c6", "devkit", "bsp", "embedded", "esp-hal"]
+categories = ["embedded", "hardware-support", "no-std"]
+
+[dependencies]
+esp-hal = { version = "1.1.0", features = ["defmt", "esp32c6", "unstable"] }
+
+[features]
+## Board is an ESP32-C6-DevKitC-1 (ESP32-C6-WROOM-1 module): also exposes GPIO10/GPIO11.
+devkitc1 = []
+## Board is an ESP32-C6-DevKitM-1 (ESP32-C6-MINI-1 module): GPIO10/GPIO11 aren't wired to headers.
+devkitm1 = []

@@ -5,6 +5,11 @@
 set -euo pipefail
 
 crate="$1"
+shift
+# Extra args (e.g. --no-default-features --features devkitm1) forwarded to `cargo publish`,
+# needed for crates like esp32c6-devkit-bsp whose empty default-feature set doesn't compile on
+# its own -- `cargo publish`'s verification build otherwise fails before anything is uploaded.
+extra_args=("$@")
 
 version=$(cargo metadata --no-deps --format-version 1 |
     jq -r --arg name "$crate" '.packages[] | select(.name == $name) | .version')
@@ -29,4 +34,4 @@ echo "Publishing $crate $version..."
 # Run from firmware/ so cargo picks up its .cargo/config.toml (riscv32imac target + build-std
 # core/alloc) -- these crates have no target config of their own since Cargo only discovers
 # .cargo/config.toml from the current working directory upward, not per workspace member.
-(cd firmware && cargo publish -p "$crate")
+(cd firmware && cargo publish -p "$crate" "${extra_args[@]}")

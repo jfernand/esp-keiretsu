@@ -1,7 +1,7 @@
 [workspace]
 members = [
     "client",
-    "devkitm1-bsp",
+    "devkit-bsp",
     "firmware",
     "resp",
     "xiao-esp32c6-bsp",

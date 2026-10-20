@@ -15,7 +15,10 @@ RESP-style protocol, with a host CLI to drive it.
 | `esp-xy-client` | [`client/`](client) | Host CLI for the controller, over BLE (btleplug) or TCP |
 | `resp-over-x` | [`resp/`](resp) | Tiny RESP-inspired command/reply framing for any byte stream; `no_std`, no-alloc by default |
 | `xiao-esp32c6-bsp` | [`xiao-esp32c6-bsp/`](xiao-esp32c6-bsp) | Board support for the Seeed Studio XIAO ESP32-C6 |
-| `esp32c6-devkitm1-bsp` | [`devkitm1-bsp/`](devkitm1-bsp) | Board support for ESP32-C6-WROOM-1 boards based on the DevKitM-1 design |
+| `esp32c6-devkit-bsp` | [`devkit-bsp/`](devkit-bsp) | Board support for Espressif's ESP32-C6-DevKitC-1 and ESP32-C6-DevKitM-1 (select with the `devkitc1`/`devkitm1` feature) |
+
+Datasheets, schematics, and user guides for the boards above are kept locally under
+[`reference/`](reference).
 
 ### Firmware binaries
 

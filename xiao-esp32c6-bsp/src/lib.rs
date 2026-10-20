@@ -1,16 +1,20 @@
 #![no_std]
 
-//! Board support package, covering every pin in `XIAO_ESP32-C6_front_pinout.png`.
+//! Board support package for the Seeed Studio XIAO ESP32-C6, covering every pin in
+//! Seeed's [getting-started guide](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/)
+//! and pinout diagrams. Downloaded copies of both, plus the schematic and pinout spreadsheet,
+//! live under `reference/xiao-esp32c6/` at the workspace root.
 //!
 //! Fixed-function pins (board-defined behavior, wrapped below):
 //! - GPIO15: onboard user LED
-//! - GPIO3:  RF power switch, active low (low = RF enabled)
-//! - GPIO14: antenna switch, active low (low = internal/onboard antenna, high = external u.FL)
+//! - GPIO3:  RF switch power, active low (low = RF switch control active)
+//! - GPIO14: RF switch port select, active low (low = onboard ceramic antenna, high =
+//!   external u.FL antenna)
 //! - GPIO9:  BOOT button (also the boot-mode strapping pin — see [`BootButton`])
 //!
 //! Header pins (exposed as raw peripherals; the app configures them as GPIO/ADC/UART/SPI):
 //! - GPIO22 / D4: I2C SDA
-//! - GPIO23 / D5: I2C SCL (inferred from the pinout diagram; only SDA was specified)
+//! - GPIO23 / D5: I2C SCL
 //! - GPIO16 / D6: UART0 TX
 //! - GPIO17 / D7: UART0 RX
 //! - GPIO18 / D10: SPI MOSI

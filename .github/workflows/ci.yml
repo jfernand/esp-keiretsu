@@ -59,7 +59,11 @@ jobs:
         run: cargo build -p xiao-esp32c6-bsp
       - name: Clippy xiao-esp32c6-bsp
         run: cargo clippy -p xiao-esp32c6-bsp -- -D warnings
-      - name: Build esp32c6-devkitm1-bsp
-        run: cargo build -p esp32c6-devkitm1-bsp
-      - name: Clippy esp32c6-devkitm1-bsp
-        run: cargo clippy -p esp32c6-devkitm1-bsp -- -D warnings
+      - name: Build esp32c6-devkit-bsp (DevKitC-1)
+        run: cargo build -p esp32c6-devkit-bsp --no-default-features --features devkitc1
+      - name: Clippy esp32c6-devkit-bsp (DevKitC-1)
+        run: cargo clippy -p esp32c6-devkit-bsp --no-default-features --features devkitc1 -- -D warnings
+      - name: Build esp32c6-devkit-bsp (DevKitM-1)
+        run: cargo build -p esp32c6-devkit-bsp --no-default-features --features devkitm1
+      - name: Clippy esp32c6-devkit-bsp (DevKitM-1)
+        run: cargo clippy -p esp32c6-devkit-bsp --no-default-features --features devkitm1 -- -D warnings

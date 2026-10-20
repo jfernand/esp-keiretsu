@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GCDQQ87G0"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-6GCDQQ87G0');
+        </script><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESP32-C6-DevKitM-1 - ESP32-C6 -  &mdash; esp-dev-kits latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=a60756f2" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=851bd809" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/wide-table-scroll.css?v=f22b5091" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=becddca3"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=ff8fa330"></script>
+        <script src="https://wavedrom.com/skins/default.js"></script>
+        <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+
+    
+        
+
+    <script type="text/javascript">
+        DOCUMENTATION_OPTIONS.PAGENAME = 'esp32-c6-devkitm-1/user_guide';
+        DOCUMENTATION_OPTIONS.PROJECT_SLUG = 'esp-dev-kits';
+        DOCUMENTATION_OPTIONS.LATEST_BRANCH_NAME = 'master';
+        DOCUMENTATION_OPTIONS.VERSIONS_URL = '.././_static/js/docs_version.js';
+        DOCUMENTATION_OPTIONS.LANGUAGES = ["en", "zh_CN"];
+        DOCUMENTATION_OPTIONS.IDF_TARGET = 'esp32c6';
+        DOCUMENTATION_OPTIONS.HAS_IDF_TARGETS = ["esp32", "esp32s2", "esp32s3", "esp32c3", "esp32c6", "esp32h2", "esp32c2", "esp32p4", "esp32c5", "esp32c61", "esp32s31", "other"]
+        DOCUMENTATION_OPTIONS.RELEASE = 'latest';
+        DOCUMENTATION_OPTIONS.LANGUAGE_URL = 'en';
+
+    </script>
+
+    <script type="text/javascript" src=".././_static/js/docs_version.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Related Documentation and Resources" href="../resources.html" />
+    <link rel="prev" title="ESP32-C6-DevKitM-1" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            esp-dev-kits
+              <img src="../_static/espressif-logo.svg" class="logo" alt="Logo"/>
+          </a>
+
+          
+            <div class="selectors">
+              <select id="target-select" style="width: 150px;" hidden>
+                <option value="" disabled selected>Choose target...</option>
+              </select>
+            </div>
+          
+
+          <div class="selectors">
+            <select id="version-select" style="width: 150px;" hidden>
+              <option value="" disabled selected>Choose version...</option>
+            </select>
+          </div>
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ESP32-C6 Boards</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../esp32-c6-devkitc-1/index.html">ESP32-C6-DevKitC-1</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ESP32-C6-DevKitM-1</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description-of-components">Description of Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-application-development">Start Application Development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contents-and-packaging">Contents and Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-reference">Hardware Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#power-supply-options">Power Supply Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#current-measurement">Current Measurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#header-block">Header Block</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-revision-details">Hardware Revision Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#related-documents">Related Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disclaimer-and-copyright-notice">Disclaimer and Copyright Notice</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources and Legal Notices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Related Documentation and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../disclaimer-and-copyright.html">Disclaimer and Copyright Notice</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">esp-dev-kits</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ESP32-C6-DevKitM-1</a></li>
+      <li class="breadcrumb-item active">ESP32-C6-DevKitM-1</li>
+    <style>
+        .download-pdf {
+            float: right;
+            margin-right: 20px;
+        }
+    </style>
+    <a href="../esp-dev-kits-en-master-esp32c6.pdf" class="download-pdf fa fa-file-pdf-o"> Download PDF</a>
+
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="esp32-c6-devkitm-1">
+<h1>ESP32-C6-DevKitM-1<a class="headerlink" href="#esp32-c6-devkitm-1" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="../../../../zh_CN/latest/esp32c6/esp32-c6-devkitm-1/user_guide.html">[中文]</a></p>
+<p>This user guide will help you get started with ESP32-C6-DevKitM-1 and will also provide more in-depth information.</p>
+<p>ESP32-C6-DevKitM-1 is an entry-level development board based on <a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/esp32-c6-mini-1_datasheet_en.pdf">ESP32-C6-MINI-1(U)</a>, a general-purpose module with a 4 MB SPI flash in the chip’s package. This board integrates complete Wi-Fi, Bluetooth LE, Zigbee, and Thread functions.</p>
+<p>Most of the I/O pins are broken out to the pin headers on both sides for easy interfacing. Developers can either connect peripherals with jumper wires or mount ESP32-C6-DevKitM-1 on a breadboard.</p>
+<figure class="align-center" id="id11">
+<img alt="ESP32-C6-DevKitM-1" src="../_images/esp32-c6-devkitm-1-isometric.png" />
+<figcaption>
+<p><span class="caption-text">ESP32-C6-DevKitM-1</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The document consists of the following major sections:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#getting-started">Getting Started</a>: Overview of ESP32-C6-DevKitM-1 and hardware/software setup instructions to get started.</p></li>
+<li><p><a class="reference internal" href="#hardware-reference">Hardware Reference</a>: More detailed information about the ESP32-C6-DevKitM-1’s hardware.</p></li>
+<li><p><a class="reference internal" href="#hardware-revision-details">Hardware Revision Details</a>: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-C6-DevKitM-1.</p></li>
+<li><p><a class="reference internal" href="#related-documents">Related Documents</a>: Links to related documentation.</p></li>
+<li><p><a class="reference internal" href="#disclaimer-and-copyright-notice">Disclaimer and Copyright Notice</a>: Link to the disclaimer and copyright notice.</p></li>
+</ul>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
+<p>This section provides a brief introduction of ESP32-C6-DevKitM-1, instructions on how to do the initial hardware setup and how to flash firmware onto it.</p>
+<section id="description-of-components">
+<h3>Description of Components<a class="headerlink" href="#description-of-components" title="Permalink to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<span id="user-guide-c6-devkitm-1-v1-board-front"></span><img alt="ESP32-C6-DevKitM-1 - front" src="../_images/esp32-c6-devkitm-1-v1-annotated-photo.png" />
+<figcaption>
+<p><span class="caption-text">ESP32-C6-DevKitM-1 - front</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The key components of the board are described in a clockwise direction.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key Component</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ESP32-C6-MINI-1 or ESP32-C6-MINI-1U</p></td>
+<td><p>ESP32-C6-MINI-1 and ESP32-C6-MINI-1U are general-purpose modules supporting Wi-Fi 6 in 2.4 GHz band, Bluetooth 5, and IEEE 802.15.4 (Zigbee 3.0 and Thread 1.3). ESP32-C6-MINI-1 comes with an on-board PCB antenna, whereas ESP32-C6-MINI-1U comes with an external antenna connector. The module is built around the ESP32-C6FH4 chip, which has a 4 MB flash in the chip’s package. For more information, see <a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/esp32-c6-mini-1_datasheet_en.pdf">ESP32-C6-MINI-1 Datasheet</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin Header</p></td>
+<td><p>All available GPIO pins (except for the SPI bus for flash) are broken out to the pin headers on the board.</p></td>
+</tr>
+<tr class="row-even"><td><p>5 V to 3.3 V LDO</p></td>
+<td><p>Power regulator that converts a 5 V supply into a 3.3 V output.</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3 V Power On LED</p></td>
+<td><p>Turns on when the USB power is connected to the board.</p></td>
+</tr>
+<tr class="row-even"><td><p>USB-to-UART Bridge</p></td>
+<td><p>Single USB-to-UART bridge chip provides transfer rates up to 3 Mbps.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESP32-C6 USB Type-C Port</p></td>
+<td><p>The USB Type-C port on the ESP32-C6 chip compliant with USB 2.0 full speed. It is capable of up to 12 Mbps transfer speed (Note that this port does not support the faster 480 Mbps high-speed transfer mode). This port is used for power supply to the board, for flashing applications to the chip, for communication with the chip using USB protocols, as well as for JTAG debugging.</p></td>
+</tr>
+<tr class="row-even"><td><p>Boot Button</p></td>
+<td><p>Download button. Holding down <strong>Boot</strong> and then pressing <strong>Reset</strong> initiates Firmware Download mode for downloading firmware through the serial port.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset Button</p></td>
+<td><p>Press this button to restart the system.</p></td>
+</tr>
+<tr class="row-even"><td><p>USB Type-C to UART Port</p></td>
+<td><p>Used for power supply to the board, for flashing applications to the chip, as well as the communication with the ESP32-C6 chip via the on-board USB-to-UART bridge.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RGB LED</p></td>
+<td><p>Addressable RGB LED, driven by GPIO8.</p></td>
+</tr>
+<tr class="row-even"><td><p>J5</p></td>
+<td><p>Used for current measurement. See details in Section <a class="reference internal" href="#user-guide-c6-devkitm-1-v1-current"><span class="std std-ref">Current Measurement</span></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="start-application-development">
+<h3>Start Application Development<a class="headerlink" href="#start-application-development" title="Permalink to this heading"></a></h3>
+<p>Before powering up your ESP32-C6-DevKitM-1, please make sure that it is in good condition with no obvious signs of damage.</p>
+<section id="required-hardware">
+<h4>Required Hardware<a class="headerlink" href="#required-hardware" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>ESP32-C6-DevKitM-1</p></li>
+<li><p>USB-A to USB-C cable</p></li>
+<li><p>Computer running Windows, Linux, or macOS</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be sure to use a good quality USB cable. Some cables are for charging only and do not provide the needed data lines nor work for programming the boards.</p>
+</div>
+</section>
+<section id="software-setup">
+<h4>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this heading"></a></h4>
+<p>Please proceed to <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/get-started/index.html">ESP-IDF Get Started</a>, which will quickly help you set up the development environment then flash an application example onto your board.</p>
+</section>
+</section>
+<section id="contents-and-packaging">
+<h3>Contents and Packaging<a class="headerlink" href="#contents-and-packaging" title="Permalink to this heading"></a></h3>
+<section id="ordering-information">
+<span id="ordering-info-esp32-c6-devkitm-1"></span><h4>Ordering Information<a class="headerlink" href="#ordering-information" title="Permalink to this heading"></a></h4>
+<p>The development board is available in the variant listed in the table below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41.0%" />
+<col style="width: 24.0%" />
+<col style="width: 9.0%" />
+<col style="width: 8.0%" />
+<col style="width: 18.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Part Number</p></th>
+<th class="head"><p>On-board Module</p></th>
+<th class="head"><p>Flash</p></th>
+<th class="head"><p>PSRAM</p></th>
+<th class="head"><p>Antenna</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ESP32-C6-DevKitM-1-N4</p></td>
+<td><p>ESP32-C6-MINI-1</p></td>
+<td><p>4 MB</p></td>
+<td><p>—</p></td>
+<td><p>PCB on-board antenna</p></td>
+</tr>
+</tbody>
+</table>
+<p>For more information about available variants, visit the <a class="reference external" href="https://products.espressif.com/#/product-selector?names=">ESP Product Selector</a> and select the <strong>Development Board</strong> tab. If you cannot find the variant you need in the table or Product Selector, or if you have special customization requirements, contact <a class="reference external" href="https://www.espressif.com/en/contact-us/sales-questions">Espressif Sales</a>.</p>
+</section>
+<section id="retail-orders">
+<h4>Retail orders<a class="headerlink" href="#retail-orders" title="Permalink to this heading"></a></h4>
+<p>If you order a few samples, each ESP32-C6-DevKitM-1 comes in an individual package in either antistatic bag or any packaging depending on your retailer.</p>
+<p>For retail orders, please go to <a class="reference external" href="https://www.espressif.com/en/company/contact/buy-a-sample">https://www.espressif.com/en/company/contact/buy-a-sample</a>.</p>
+</section>
+<section id="wholesale-orders">
+<h4>Wholesale Orders<a class="headerlink" href="#wholesale-orders" title="Permalink to this heading"></a></h4>
+<p>If you order in bulk, the boards come in large cardboard boxes.</p>
+<p>For wholesale orders, please check <a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/espressif_products_ordering_information_en.pdf">Espressif Product Ordering Information</a> (PDF)</p>
+</section>
+</section>
+</section>
+<section id="hardware-reference">
+<h2>Hardware Reference<a class="headerlink" href="#hardware-reference" title="Permalink to this heading"></a></h2>
+<section id="block-diagram">
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Permalink to this heading"></a></h3>
+<p>The block diagram below shows the components of ESP32-C6-DevKitM-1 and their interconnections.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="../_images/esp32-c6-devkitm-1-v1-block-diagram.png"><img alt="ESP32-C6-DevKitM-1 (click to enlarge)" src="../_images/esp32-c6-devkitm-1-v1-block-diagram.png" style="width: 560.0px; height: 295.4px;" /></a>
+<figcaption>
+<p><span class="caption-text">ESP32-C6-DevKitM-1 (click to enlarge)</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="power-supply-options">
+<h3>Power Supply Options<a class="headerlink" href="#power-supply-options" title="Permalink to this heading"></a></h3>
+<p>There are three mutually exclusive ways to provide power to the board:</p>
+<ul class="simple">
+<li><p>USB Type-C to UART Port and ESP32-C6 USB Type-C Port (either one or both), default power supply (recommended)</p></li>
+<li><p>5V and GND pin headers</p></li>
+<li><p>3V3 and GND pin headers</p></li>
+</ul>
+</section>
+<section id="current-measurement">
+<span id="user-guide-c6-devkitm-1-v1-current"></span><h3>Current Measurement<a class="headerlink" href="#current-measurement" title="Permalink to this heading"></a></h3>
+<p>The J5 headers on ESP32-C6-DevKitM-1 (see J5 in Figure <a class="reference internal" href="#user-guide-c6-devkitm-1-v1-board-front"><span class="std std-ref">ESP32-C6-DevKitM-1 - front</span></a>) can be used for measuring the current drawn by the ESP32-C6-MINI-1(U) module:</p>
+<ul class="simple">
+<li><p>Remove the jumper: Power supply between the module and peripherals on the board is cut off. To measure the module’s current, connect the board with an ammeter via J5 headers.</p></li>
+<li><p>Apply the jumper (factory default): Restore the board’s normal functionality.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using 3V3 and GND pin headers to power the board, please remove the J5 jumper, and connect an ammeter in series to the external circuit to measure the module’s current.</p>
+</div>
+</section>
+<section id="header-block">
+<h3>Header Block<a class="headerlink" href="#header-block" title="Permalink to this heading"></a></h3>
+<p>The two tables below provide the <strong>Name</strong> and <strong>Function</strong> of the pin headers on both sides of the board (J1 and J3). The pin header names are shown in Figure <a class="reference internal" href="#user-guide-c6-devkitm-1-v1-board-front"><span class="std std-ref">ESP32-C6-DevKitM-1 - front</span></a>. The numbering is the same as in the <a class="reference external" href="https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-schematics.pdf">ESP32-C6-DevKitM-1 Schematic</a> (PDF).</p>
+<section id="j1">
+<h4>J1<a class="headerlink" href="#j1" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Type <a class="footnote-reference brackets" href="#id8" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3V3</p></td>
+<td><p>P</p></td>
+<td><p>3.3 V power supply</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>RST</p></td>
+<td><p>I</p></td>
+<td><p>High: Power up; Low: Power down.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO2, LP_GPIO2, LP_UART_RTSN, ADC1_CH2, FSPIQ</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO3, LP_GPIO3, LP_UART_CTSN, ADC1_CH3</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>I/O/T</p></td>
+<td><p>MTMS <a class="footnote-reference brackets" href="#id10" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, GPIO4, LP_GPIO4, LP_UART_RXD, ADC1_CH4, FSPIHD</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>I/O/T</p></td>
+<td><p>MTDI <a class="footnote-reference brackets" href="#id10" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, GPIO5, LP_GPIO5, LP_UART_TXD, ADC1_CH5, FSPIWP</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>0/N</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO0, XTAL_32K_P, LP_GPIO0, LP_UART_DTRN, ADC1_CH0</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>1/N</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO1, XTAL_32K_N, LP_GPIO1, LP_UART_DSRN, ADC1_CH1</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>8</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO8 <a class="footnote-reference brackets" href="#id9" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id10" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>6</p></td>
+<td><p>I/O/T</p></td>
+<td><p>MTCK, GPIO6, LP_GPIO6, LP_I2C_SDA, ADC1_CH6, FSPICLK</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>7</p></td>
+<td><p>I/O/T</p></td>
+<td><p>MTDO, GPIO7, LP_GPIO7, LP_I2C_SCL, FSPID</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>14</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO14</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>G</p></td>
+<td><p>G</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>5V</p></td>
+<td><p>P</p></td>
+<td><p>5 V power supply</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>G</p></td>
+<td><p>G</p></td>
+<td><p>Ground</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="j3">
+<h4>J3<a class="headerlink" href="#j3" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>G</p></td>
+<td><p>G</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>TX</p></td>
+<td><p>I/O/T</p></td>
+<td><p>U0TXD, GPIO16, FSPICS0</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>RX</p></td>
+<td><p>I/O/T</p></td>
+<td><p>U0RXD, GPIO17, FSPICS1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>23</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO23, SDIO_DATA3</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>22</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO22, SDIO_DATA2</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>21</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO21, SDIO_DATA1, FSPICS5</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>20</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO20, SDIO_DATA0, FSPICS4</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>19</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO19, SDIO_CLK, FSPICS3</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>18</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO18, SDIO_CMD, FSPICS2</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>15</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO15 <a class="footnote-reference brackets" href="#id10" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>9</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO9 <a class="footnote-reference brackets" href="#id10" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>G</p></td>
+<td><p>G</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>13</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO13, USB_D+</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>12</p></td>
+<td><p>I/O/T</p></td>
+<td><p>GPIO12, USB_D-</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>G</p></td>
+<td><p>G</p></td>
+<td><p>Ground</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>P: Power supply; I: Input; O: Output; T: High impedance.</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>Used to drive the RGB LED.</p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id5">3</a>,<a role="doc-backlink" href="#id6">4</a>,<a role="doc-backlink" href="#id7">5</a>)</span>
+<p>MTMS, MTDI, GPIO8, GPIO9, and GPIO15 are strapping pins of the ESP32-C6 chip. These pins are used to control several chip functions depending on binary voltage values applied to the pins during chip power-up or system reset. For description and application of the strapping pins, please refer to <a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf">ESP32-C6 Datasheet</a> &gt; Section <em>Strapping Pins</em>.</p>
+</aside>
+</aside>
+</section>
+<section id="pin-layout">
+<h4>Pin Layout<a class="headerlink" href="#pin-layout" title="Permalink to this heading"></a></h4>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="../_images/esp32-c6-devkitm-1-pin-layout.png"><img alt="ESP32-C6-DevKitM-1 Pin Layout (click to enlarge)" src="../_images/esp32-c6-devkitm-1-pin-layout.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">ESP32-C6-DevKitM-1 Pin Layout (click to enlarge)</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="hardware-revision-details">
+<h2>Hardware Revision Details<a class="headerlink" href="#hardware-revision-details" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>For boards with the PW number of and after PW-2023-06-XXXX (on and after June 2023), multi-point calibration is performed on ADC instead of two-point calibration, and the measurement range and accuracy are illustrated in <a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf">ESP32-C6 Datasheet</a> &gt; Section ADC Characteristics. For boards with earlier PW number, please <a class="reference external" href="https://www.espressif.com/en/contact-us/sales-questions">ask our sales team</a> to provide the actual range and accuracy according to batch.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The PW number can be found in the product label on the large cardboard boxes for wholesale orders.</p>
+</div>
+</section>
+<section id="related-documents">
+<h2>Related Documents<a class="headerlink" href="#related-documents" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf">ESP32-C6 Datasheet</a> (PDF)</p></li>
+<li><p><a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/esp32-c6-mini-1_datasheet_en.pdf">ESP32-C6-MINI-1 Datasheet</a> (PDF)</p></li>
+<li><p><a class="reference external" href="https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-schematics.pdf">ESP32-C6-DevKitM-1 Schematic</a> (PDF)</p></li>
+<li><p><a class="reference external" href="https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-pcb-layout.pdf">ESP32-C6-DevKitM-1 PCB Layout</a> (PDF)</p></li>
+<li><p><a class="reference external" href="https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.pdf">ESP32-C6-DevKitM-1 Dimensions</a> (PDF)</p></li>
+<li><p><a class="reference external" href="https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.dxf">ESP32-C6-DevKitM-1 Dimensions source file</a> (DXF) - You can view it with <a class="reference external" href="https://viewer.autodesk.com/">Autodesk Viewer</a> online</p></li>
+</ul>
+<p>For further design documentation for the board, please contact us at <a class="reference external" href="mailto:sales&#37;&#52;&#48;espressif&#46;com">sales<span>&#64;</span>espressif<span>&#46;</span>com</a>.</p>
+</section>
+<section id="disclaimer-and-copyright-notice">
+<h2>Disclaimer and Copyright Notice<a class="headerlink" href="#disclaimer-and-copyright-notice" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference internal" href="../disclaimer-and-copyright.html"><span class="doc">Disclaimer and Copyright Notice</span></a>.</p>
+</section>
+</section>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+           </div>
+             <div class="articleComments">
+<p data-class="single"></p>
+
+             </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../resources.html" class="btn btn-neutral float-right" title="Related Documentation and Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="ESP32-C6-DevKitM-1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr />
+  <div style="display: flex; justify-content: space-between;">
+  <div class="f5 contribution" style="height:100px;width:200px;float:left;"><b>Suggestion on this document?</b><br><br><font size=2>
+    <a id="feedback" class="btn btn-neutral" href="https://www.espressif.com/en/company/documents/documentation_feedback?docId=6565&sections=ESP32-C6-DevKitM-1 (esp32-c6-devkitm-1/user_guide)&version=latest (master)">
+      <svg aria-hidden="true" role="img" class="octicon mr-1" viewBox="2 2 16 16" width="12" height="12" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible">
+        <path fill-rule="evenodd" d="M17.218,2.268L2.477,8.388C2.13,8.535,2.164,9.05,2.542,9.134L9.33,10.67l1.535,6.787c0.083,0.377,0.602,0.415,0.745,0.065l6.123-14.74C17.866,2.46,17.539,2.134,17.218,2.268 M3.92,8.641l11.772-4.89L9.535,9.909L3.92,8.641z M11.358,16.078l-1.268-5.613l6.157-6.157L11.358,16.078z"></path>
+      </svg>&nbsp;Provide feedback
+    </a>
+  </font></div>
+
+  <div style="height:100px;width:200px;margin:0 auto;"><b>Help improve this document?</b><br><br><font size=2>
+    <a id="edit-on-github" class="btn btn-neutral" href="https://github.com/espressif/esp-dev-kits/blob/4ffc5bd/docs/en/esp32-c6-devkitm-1/user_guide.rst">
+      <svg aria-hidden="true" role="img" class="octicon mr-1" viewBox="2 2 16 16" width="12" height="12" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.52-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+      </svg>&nbsp;Edit on GitHub
+    </a>
+  </font></div>
+
+  <div style="height:100px;width:180px;float:right;"><b>Need more information?</b>
+    <div><font size = 2><br><a id="ESP forum" href="https://www.esp32.com/viewforum.php?f=23"><svg aria-hidden="true" role="img" class="octicon mr-1" viewBox="2 0 16 16" width="12" height="12" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path fill-rule="evenodd" d="M17.659,3.681H8.468c-0.211,0-0.383,0.172-0.383,0.383v2.681H2.341c-0.21,0-0.383,0.172-0.383,0.383v6.126c0,0.211,0.172,0.383,0.383,0.383h1.532v2.298c0,0.566,0.554,0.368,0.653,0.27l2.569-2.567h4.437c0.21,0,0.383-0.172,0.383-0.383v-2.681h1.013l2.546,2.567c0.242,0.249,0.652,0.065,0.652-0.27v-2.298h1.533c0.211,0,0.383-0.172,0.383-0.382V4.063C18.042,3.853,17.87,3.681,17.659,3.681 M11.148,12.87H6.937c-0.102,0-0.199,0.04-0.27,0.113l-2.028,2.025v-1.756c0-0.211-0.172-0.383-0.383-0.383H2.724V7.51h5.361v2.68c0,0.21,0.172,0.382,0.383,0.382h2.68V12.87z M17.276,9.807h-1.533c-0.211,0-0.383,0.172-0.383,0.383v1.755L13.356,9.92c-0.07-0.073-0.169-0.113-0.27-0.113H8.851v-5.36h8.425V9.807z"></path></svg>&nbsp;Check ESP forum</a></font>
+    </div>
+     <div><font size = 2><a id="sales-questions" href="https://www.espressif.com/en/contact-us/sales-questions"><svg aria-hidden="true" role="img" class="octicon mr-1" viewBox="0 0 16 16" width="12" height="12" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path fill-rule="evenodd" d="M15.573,11.624c0.568-0.478,0.947-1.219,0.947-2.019c0-1.37-1.108-2.569-2.371-2.569s-2.371,1.2-2.371,2.569c0,0.8,0.379,1.542,0.946,2.019c-0.253,0.089-0.496,0.2-0.728,0.332c-0.743-0.898-1.745-1.573-2.891-1.911c0.877-0.61,1.486-1.666,1.486-2.812c0-1.79-1.479-3.359-3.162-3.359S4.269,5.443,4.269,7.233c0,1.146,0.608,2.202,1.486,2.812c-2.454,0.725-4.252,2.998-4.252,5.685c0,0.218,0.178,0.396,0.395,0.396h16.203c0.218,0,0.396-0.178,0.396-0.396C18.497,13.831,17.273,12.216,15.573,11.624 M12.568,9.605c0-0.822,0.689-1.779,1.581-1.779s1.58,0.957,1.58,1.779s-0.688,1.779-1.58,1.779S12.568,10.427,12.568,9.605 M5.06,7.233c0-1.213,1.014-2.569,2.371-2.569c1.358,0,2.371,1.355,2.371,2.569S8.789,9.802,7.431,9.802C6.073,9.802,5.06,8.447,5.06,7.233 M2.309,15.335c0.202-2.649,2.423-4.742,5.122-4.742s4.921,2.093,5.122,4.742H2.309z M13.346,15.335c-0.067-0.997-0.382-1.928-0.882-2.732c0.502-0.271,1.075-0.429,1.686-0.429c1.828,0,3.338,1.385,3.535,3.161H13.346z"></path></svg>&nbsp;Sales Questions</a>
+      </font></div>
+     <div><font size = 2><a id="technical-inquiries" href="https://www.espressif.com/en/contact-us/technical-inquiries"><svg aria-hidden="true" role="img" class="octicon mr-1" viewBox="0 0 16 16" width="12" height="12" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path fill-rule="evenodd" d="M15.573,11.624c0.568-0.478,0.947-1.219,0.947-2.019c0-1.37-1.108-2.569-2.371-2.569s-2.371,1.2-2.371,2.569c0,0.8,0.379,1.542,0.946,2.019c-0.253,0.089-0.496,0.2-0.728,0.332c-0.743-0.898-1.745-1.573-2.891-1.911c0.877-0.61,1.486-1.666,1.486-2.812c0-1.79-1.479-3.359-3.162-3.359S4.269,5.443,4.269,7.233c0,1.146,0.608,2.202,1.486,2.812c-2.454,0.725-4.252,2.998-4.252,5.685c0,0.218,0.178,0.396,0.395,0.396h16.203c0.218,0,0.396-0.178,0.396-0.396C18.497,13.831,17.273,12.216,15.573,11.624 M12.568,9.605c0-0.822,0.689-1.779,1.581-1.779s1.58,0.957,1.58,1.779s-0.688,1.779-1.58,1.779S12.568,10.427,12.568,9.605 M5.06,7.233c0-1.213,1.014-2.569,2.371-2.569c1.358,0,2.371,1.355,2.371,2.569S8.789,9.802,7.431,9.802C6.073,9.802,5.06,8.447,5.06,7.233 M2.309,15.335c0.202-2.649,2.423-4.742,5.122-4.742s4.921,2.093,5.122,4.742H2.309z M13.346,15.335c-0.067-0.997-0.382-1.928-0.882-2.732c0.502-0.271,1.075-0.429,1.686-0.429c1.828,0,3.338,1.385,3.535,3.161H13.346z"></path></svg>&nbsp;Technical Inquiries </a>
+      </font></div>
+  </div>
+</div>
+  <div role="contentinfo">
+  </div>
+  <ul class="footer">
+    <li>
+      <br> <!-- Separate Feedback/Information part with Copyright/Sphinx -->
+        
+        &copy; Copyright 2016 - 2026, Espressif Systems (Shanghai) CO., LTD
+    <p>
+      
+      
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/espressif/sphinx_idf_theme">theme</a>  based on <a href="https://github.com/readthedocs/sphinx_rtd_theme">Read the Docs Sphinx Theme</a>.
+    </li></p> 
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
